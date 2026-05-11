@@ -35,6 +35,18 @@ description: Use when a task spans multiple files or sessions, needs proposal, s
 
 `plan.md` 不再默认创建。若旧任务中已有 `plan.md`，保留它，但在继续大改前把其中内容拆分映射到 `design.md` 和 `tasks.md`。
 
+## Initialization
+
+新建缺失文件时，不要创建空文件。应使用本技能附带的 [templates.md](templates.md) 作为默认初始化骨架，再结合当前任务补全内容。
+
+最低要求：
+
+- `proposal.md` 至少写出背景、问题陈述、目标结果、价值、为什么现在做
+- `spec.md` 至少写出范围、非目标、约束、验收标准、关键变更点
+- `design.md` 至少写出总体方案、接口或模块影响、关键流程、权衡、风险
+- `tasks.md` 至少写出阶段、任务清单、里程碑、验证方式，并用勾选维护进度
+- `status.md` 至少写出当前状态、已完成、进行中、阻塞、最新决策、验证结果、下一步
+
 ## Workflow
 
 1. 判断任务是否属于长周期任务；若不是，明确说明无需脚手架。
@@ -58,6 +70,7 @@ description: Use when a task spans multiple files or sessions, needs proposal, s
 
 - 跳过 `proposal.md`，直接进入实现，导致“为何做”在中途漂移
 - 把设计方案和执行清单继续混在一个 `plan.md`
+- 创建空文件，导致后续任务没有最小骨架
 - 只改代码不更新 `tasks.md` 或 `status.md`
 - 目录已存在时重新初始化，覆盖旧上下文
 - 完成后只口头汇报，不记录验证结果和遗留风险
